@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 class Review extends Component {
   render() {
-    const { rating, author, body, publish_date } = this.props;
+    const { rating, author, body, publish_date } = this.props.review;
 
     return (
       <div className="card card-body mb-3">
@@ -19,10 +19,7 @@ class Review extends Component {
 }
 
 Review.propTypes = {
-  rating: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
-  body: PropTypes.string.isRequired,
-  publish_date: PropTypes.string.isRequired
+  review: PropTypes.object.isRequired
 };
 
 export default Review;

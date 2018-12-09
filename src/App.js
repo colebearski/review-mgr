@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // Components
-import Review from "./components/reviews/Review";
+import Reviews from "./components/reviews/Reviews";
 import Header from "./components/layouts/Header";
 // Css
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -11,7 +11,8 @@ class App extends Component {
       <div className="App">
         <Header branding="Review Manager" />
         <div className="container">
-          <Review
+          <Reviews />
+          {/* <Review
             rating="4.1"
             author="John Doe"
             body="Romeo and Juliet, two thumbs up!"
@@ -22,7 +23,7 @@ class App extends Component {
             author="Jackie Chan"
             body="I just don't get it. Romeo and Juliet could of been a bit more grown up"
             publish_date="1/2/15"
-          />
+          /> */}
         </div>
       </div>
     );
