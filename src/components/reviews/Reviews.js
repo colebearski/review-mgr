@@ -25,11 +25,11 @@ class Reviews extends Component {
     const { reviews } = this.state;
 
     return (
-      <div>
+      <React.Fragment>
         {reviews.map(review => (
           <Review key={review.id} review={review} />
         ))}
-      </div>
+      </React.Fragment>
     );
   }
 }
