@@ -6,6 +6,8 @@ import Header from "./components/layouts/Header";
 import { Provider } from "./Context";
 // Css
 import "bootstrap/dist/css/bootstrap.min.css";
+// Secret
+require("dotenv").config();
 
 class App extends Component {
   render() {

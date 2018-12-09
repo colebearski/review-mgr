@@ -1,3 +1,8 @@
+1. Format Date
+2. Possible Pagination
+3. Filter by ID, Rating or Review
+4. Testing
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

@@ -1,26 +1,35 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 const Context = React.createContext();
 
 export class Provider extends Component {
   // Global State
   state = {
-    reviews: [
-      {
-        id: 1,
-        rating: "4",
-        author: "Tom Jones",
-        body: "Romeo and Juliet seem like they could of handled it better",
-        publish_date: "3/6/16"
-      },
-      {
-        id: 2,
-        rating: "3",
-        author: "Lis Smith",
-        body: "Macbeth was okay",
-        publish_date: "1/4/15"
-      }
-    ]
+    reviews: []
+  };
+
+  componentDidMount() {
+    this.getReviews();
+  }
+
+  getReviews = () => {
+    const URL = "https://shakespeare.podium.com/api/reviews";
+    const config = {
+      headers: { "x-api-key": "H3TM28wjL8R4#HTnqk?c" }
+    };
+
+    axios
+      .get(URL, config)
+      .then(res => {
+        console.log("##### HIT", res);
+        this.setState({
+          reviews: res.data
+        });
+      })
+      .catch(error => {
+        console.log("***** ERROR", error);
+      });
   };
 
   render() {
