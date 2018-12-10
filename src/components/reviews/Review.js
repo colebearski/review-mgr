@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import Moment from "react-moment";
 
 class Review extends Component {
   state = {
@@ -26,7 +27,10 @@ class Review extends Component {
           <ul className="list-group">
             <li className="list-group-item">Author: {author}</li>
             <li className="list-group-item">Review: {body}</li>
-            <li className="list-group-item">Date: {publish_date.toString()}</li>
+
+            <li className="list-group-item">
+              Date: <Moment format="YYYY/MM/DD">{publish_date}</Moment>
+            </li>
           </ul>
         ) : null}
       </div>
