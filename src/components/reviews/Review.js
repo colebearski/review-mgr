@@ -26,7 +26,7 @@ class Review extends Component {
           <ul className="list-group">
             <li className="list-group-item">Author: {author}</li>
             <li className="list-group-item">Review: {body}</li>
-            <li className="list-group-item">Date: {publish_date}</li>
+            <li className="list-group-item">Date: {publish_date.toString()}</li>
           </ul>
         ) : null}
       </div>

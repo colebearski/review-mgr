@@ -22,9 +22,16 @@ export class Provider extends Component {
     axios
       .get(URL, config)
       .then(res => {
-        console.log("##### HIT", res);
+        let sortReviews = res.data.sort((a, b) => {
+          return a.publish_date < b.publish_date
+            ? 1
+            : b.publish_date < a.publish_date
+            ? -1
+            : 0;
+        });
+
         this.setState({
-          reviews: res.data
+          reviews: sortReviews
         });
       })
       .catch(error => {
